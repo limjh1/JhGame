@@ -16,4 +16,8 @@ class JHGAME_API UJhPawnData : public UPrimaryDataAsset
 	
 public:
 	UJhPawnData(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+
+	/* Pawn의 Class, 어떤 Pawn을 소환할 지 */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Jh|Pawn")
+	TSubclassOf<APawn> PawnClass;
 };
