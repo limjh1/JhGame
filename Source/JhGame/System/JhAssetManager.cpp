@@ -22,8 +22,6 @@ UJhAssetManager& UJhAssetManager::Get()
 
 	// 위의 UE_LOG의 Fatal로 인해, Crash가 나기 때문에 도달하지 않지만 컴파일을 위해 더미 리턴
 	return *NewObject<UJhAssetManager>();
-
-	// TEST PUSH
 }
 
 PRAGMA_DISABLE_OPTIMIZATION
