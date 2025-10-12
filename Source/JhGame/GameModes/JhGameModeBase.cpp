@@ -30,7 +30,8 @@ void AJhGameModeBase::InitGameState()
 {
 	Super::InitGameState();
 
-	// 해당 시점에서는 GameState가 있다는 것을 보장받을 수 있음.
+	// 해당 시점에서는 GameState가 있다는 것을 보장받을 수 있으나 검사.
+	check(GameState);
 
 	// Experience 비동기 로딩을 위한 Delegate를 준비한다:
 	UJhExperienceManagerComponent* ExperienceManagerComponent = GameState->FindComponentByClass<UJhExperienceManagerComponent>();
@@ -42,6 +43,7 @@ void AJhGameModeBase::InitGameState()
 
 void AJhGameModeBase::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
 {	
+	// 로드가 되었을 때만 호출하게되면, SpawnDefaultPawnAtTransform_Implementation 타이밍에, 지정한 데이터로 스폰할 것을 보장받을 수 있다.
 	if (IsExperienceLoaded())
 	{
 		Super::HandleStartingNewPlayer_Implementation(NewPlayer);

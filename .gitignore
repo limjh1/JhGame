@@ -1,5 +1,6 @@
 # ========== Unreal Engine 5 기본 ==========
 # Binaries / Build 산출물
+Content/
 Binaries/
 DerivedDataCache/
 Intermediate/
@@ -57,6 +58,5 @@ Thumbs.db
 # ========== 프로젝트 유지 대상 ==========
 # 아래 폴더/파일은 반드시 Git에 포함
 !Config/
-!Content/
 !Source/
 !.uproject
