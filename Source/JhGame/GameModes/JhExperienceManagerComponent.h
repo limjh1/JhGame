@@ -37,6 +37,12 @@ public:
 	/* 아래의 OnExperienceLoaded에 바인딩하거나, 이미 Experience 로딩이 완료되었다면 바로 호출함 */
 	void CallOrRegister_OnExperienceLoaded(FOnJhExperienceLoaded::FDelegate&& Delegate);
 
+	void ServerSetCurrentExperience(FPrimaryAssetId ExperienceId);
+	void StartExperienceLoad();
+	void OnExperienceLoadComplete();
+	void OnExperienceFullLoadCompleted();
+
+	const UJhExperienceDefinition* GetCurrentExperienceChecked() const;
 public:
 	UPROPERTY()
 	TObjectPtr<const UJhExperienceDefinition> CurrentExperience;

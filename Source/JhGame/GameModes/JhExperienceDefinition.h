@@ -24,7 +24,7 @@ public:
 	 */
 	UPROPERTY(EditDefaultsOnly, Category = Gameplay)
 	TObjectPtr<UJhPawnData> DefaultPawnData;
-
+	
 	/**
 	 * 해당 property는 단순히 마킹 및 기억용으로 남겨둔다
 	 * - 게임 모드에 따른 GameFeature plugin을 로딩하는데 이에 대한 연결고리고 생각하면 된다

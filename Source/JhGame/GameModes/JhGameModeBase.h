@@ -7,6 +7,7 @@
 #include "JhGameModeBase.generated.h"
 
 class UJhExperienceDefinition;
+class UJhPawnData;
 /**
  * 
  */
@@ -22,6 +23,9 @@ public:
 	/* GameState 생성 완료 후 호출 */
 	virtual void InitGameState() final; 
 
+	/** GetDefaultPawnClassForController */
+	virtual UClass* GetDefaultPawnClassForController_Implementation(AController* InController) final;
+
 	/** HandleStartingNewPlayer */
 	virtual void HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer) final;
 
@@ -32,6 +36,9 @@ public:
 	* member methods
 	*/
 	void HandleMatchAssignmentIfNotExpectingOne();
+	void OnMatchAssignmentGiven(FPrimaryAssetId ExperienceId);
 	bool IsExperienceLoaded() const;
 	void OnExperienceLoaded(const UJhExperienceDefinition* CurrentExperience);
+
+	const UJhPawnData* GetPawnDataForController(const AController* InController) const;
 };

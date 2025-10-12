@@ -16,9 +16,9 @@ public class JhGame : ModuleRules
 			"InputCore", 
 			// GAS
 			"GameplayTags",
-			// Game Features
 			"ModularGameplay",
-			"EnhancedInput" 
+			"EnhancedInput",
+			"GameFeatures",
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

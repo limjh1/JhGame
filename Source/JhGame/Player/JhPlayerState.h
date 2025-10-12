@@ -24,9 +24,12 @@ public:
 
 	/**
 	 * member methods
-	 */
+	 */	
+	template <class T>
+	const T* GetPawnData() const { return Cast<T>(PawnData); }
 	void OnExperienceLoaded(const UJhExperienceDefinition* CurrentExperience);
+	void SetPawnData(const UJhPawnData* InPawnData);
 
 	UPROPERTY()
-	TObjectPtr<const UJhPawnData> PawnData;
+	TObjectPtr<const UJhPawnData> PawnData; // 캐싱
 };
