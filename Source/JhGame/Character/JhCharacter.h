@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "JhCharacter.generated.h"
 
+class UJhPawnExtensionComponent;
+
 UCLASS()
 class JHGAME_API AJhCharacter : public ACharacter
 {
@@ -26,4 +28,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Jh|Character")
+	TObjectPtr<UJhPawnExtensionComponent> PawnExtComponent;
 };

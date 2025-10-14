@@ -2,12 +2,16 @@
 
 
 #include "JhCharacter.h"
+#include "JhPawnExtensionComponent.h"
 
 // Sets default values
 AJhCharacter::AJhCharacter()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bStartWithTickEnabled = false;
+	PrimaryActorTick.bCanEverTick = false;
+
+	// PawnExtComponent 생성
+	PawnExtComponent = CreateDefaultSubobject<UJhPawnExtensionComponent>(TEXT("PawnExtensionComponent"));
 
 }
 

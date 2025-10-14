@@ -3,6 +3,7 @@
 
 #include "JhAssetManager.h"
 #include "JhGame/JhLogChannels.h"
+#include "JhGame/JhGameplayTags.h"
 
 UJhAssetManager::UJhAssetManager()
 {
@@ -28,6 +29,8 @@ PRAGMA_DISABLE_OPTIMIZATION
 void UJhAssetManager::StartInitialLoading()
 {
 	Super::StartInitialLoading();
+
+	FJhGameplayTags::InitializeNativeTags();
 }
 PRAGMA_ENABLE_OPTIMIZATION
 
